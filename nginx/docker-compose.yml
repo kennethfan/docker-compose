@@ -1,0 +1,21 @@
+version: "3"
+services:
+  nginx:
+    image: nginx:1.25 # 基础镜像
+    container_name: nginx # 容器名称
+    restart: always
+    ports: # 映射端口，对外提供服务
+      - 80:80 # nginx的服务端口
+    stdin_open: true # 标准输入打开
+    tty: true # 后台运行不退出
+    privileged: true # 拥有容器内命令执行的权限
+    # 映射数据卷，配置目录
+    volumes: [
+        "./var/run:/var/run",
+        "./var/log/nginx:/var/log/nginx",
+        "./etc/nginx:/etc/nginx",
+    ]
+    logging:
+      options:
+        max-size: '100m'
+        max-file: '10'
