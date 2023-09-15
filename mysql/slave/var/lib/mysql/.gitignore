@@ -6,3 +6,4 @@
 mysql-bin.*
 relay-log.*
 ib*
+master.info
