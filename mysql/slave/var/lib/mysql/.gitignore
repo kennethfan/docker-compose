@@ -1,0 +1,8 @@
+*
+!.gitignore
+!mysql
+!sys
+!performance_schema
+!*.pem
+!*.conf
+!ib*
