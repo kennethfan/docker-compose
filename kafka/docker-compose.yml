@@ -37,7 +37,6 @@ services:
     image: bitnami/kafka:3.5
     restart: always
     ports:
-    ports:
       - "19092:9092"
       - "19093:9093"
     environment:
@@ -69,7 +68,6 @@ services:
     container_name: kafka2 # 容器名称
     image: bitnami/kafka:3.5
     restart: always
-    ports:
     ports:
       - "29092:9092"
       - "29093:9093"
