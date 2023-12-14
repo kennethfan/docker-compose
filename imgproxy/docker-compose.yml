@@ -11,10 +11,8 @@ services:
       - ./data:/app/images
     environment:
       - IMGPROXY_LOCAL_FILESYSTEM_ROOT=/app/images
-      - IMGPROXY_USE_S3=true
-      - IMGPROXY_S3_ENDPOINT=http://192.168.25.86:9000
-      - AWS_ACCESS_KEY_ID=RgZhYyxESW5A7qHcXb3x
-      - AWS_SECRET_ACCESS_KEY=G2xeNJPaDe28OmmGEyXvEyipKcIcV79WnriYYDDk
+    env_file:
+      - ./env/s3.env
 volumes:
   minio_data:
     driver: local
