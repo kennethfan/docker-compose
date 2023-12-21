@@ -7,10 +7,15 @@ create a kafka cluster with docker compose quickly
 ## start service
 start service
 ```bash
-sh start.sh
+make start
 ```
 
 ## stop service
 ```bash
-sh stop.sh
+make stop
+```
+
+restart service
+```bash
+make restart
 ```

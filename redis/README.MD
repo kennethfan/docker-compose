@@ -11,7 +11,7 @@ sh redis-config.sh
 
 start service
 ```bash
-sh start.sh
+make start
 ```
 
 init service if first
@@ -21,7 +21,11 @@ sh init.sh
 
 ## stop service
 ```bash
-sh stop.sh
+make stop
+```
+## restart service
+```bash
+make restart
 ```
 
 ## cluster info
