@@ -1,6 +1,6 @@
 start:
-	sh start.sh
+	sh ../scripts/start.sh
 stop:
-	sh stop.sh
+	sh ../scripts/stop.sh
 restart:
-	sh stop.sh && sh start.sh
+	make stop && make start

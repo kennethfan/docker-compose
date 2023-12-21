@@ -6,17 +6,22 @@ create a mysql master-slave cluster with docker compose quickly
 ## start service
 start service
 ```bash
-sh start.sh
+make start
 ```
 
 init service if first
 ```bash
 mysql -uroot -h127.0.0.1 -p123456 -P13306 < master_init.sql
 
-mysql -uroot -h127.0.0.1 -p123456 -P13306 < slave_init.sql
+mysql -uroot -h127.0.0.1 -p123456 -P23306 < slave_init.sql
 ```
 
 ## stop service
 ```bash
-sh stop.sh
+make stop
+```
+
+## restart service
+```bash
+make restart
 ```
