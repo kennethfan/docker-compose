@@ -1,10 +1,7 @@
-*/
 *
 !.gitignore
 !mysql/
 !sys/
 !performance_schema/
-!ib*
-!mysql.bin*
 !*.pem
 !*.cnf
