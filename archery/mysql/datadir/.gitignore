@@ -1,10 +1,10 @@
 */
-*
-!.gitignore
 !mysql/
 !sys/
 !performance_schema/
-!ib*
-!mysql.bin*
-!*.pem
-!*.cnf
+*.pid
+mysql-bin.*
+relay-log.*
+ib*
+mysql/innodb_table_stats
+mysql/innodb_index_stats
