@@ -6,7 +6,7 @@ services:
     container_name: archery-redis
     restart: always
     command: redis-server --requirepass 123456
-    expose:
+    ports:
       - "6380:6379"
     healthcheck:
       test: [ "CMD", "redis-cli", "ping" ]

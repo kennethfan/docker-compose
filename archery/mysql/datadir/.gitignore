@@ -1,8 +1,5 @@
-*/
+*
+!.gitignore
 !mysql/
 !sys/
 !performance_schema/
-*.pid
-mysql-bin.*
-relay-log.*
-ib*
