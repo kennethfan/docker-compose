@@ -1,12 +1,12 @@
 version: "3"
 services:
   redis-m6391:
-    image: redis:5.0.5 # 基础镜像
+    image: redis:7.2 # 基础镜像
     container_name: redis-m6391 # 容器名称
     restart: always
     environment: # 环境变量
       - TZ=Asia/Shanghai
-      - LANG=en_US.UTF-8
+      #- LANG=en_US.UTF-8
     ports: # 映射端口，对外提供服务
       - 6391:6391 # redis的服务端口
       - 16391:16391 # redis集群监控端口
@@ -17,8 +17,6 @@ services:
     volumes: [
         "./redis-m6391/data:/data",
         "./redis-m6391/conf/redis.conf:/etc/redis/redis.conf",
-        "./etc/rc.local:/etc/rc.local",
-        "./etc/localtime:/etc/localtime"
     ]
     command: [
         "redis-server",
@@ -29,12 +27,12 @@ services:
         max-size: '100m'
         max-file: '10'
   redis-m6392:
-    image: redis:5.0.5 # 基础镜像
+    image: redis:7.2 # 基础镜像
     container_name: redis-m6392 # 容器名称
     restart: always
     environment: # 环境变量
       - TZ=Asia/Shanghai
-      - LANG=en_US.UTF-8
+      #- LANG=en_US.UTF-8
     ports: # 映射端口，对外提供服务
       - 6392:6392 # redis的服务端口
       - 16392:16392 # redis集群监控端口
@@ -45,8 +43,6 @@ services:
     volumes: [
         "./redis-m6392/data:/data",
         "./redis-m6392/conf/redis.conf:/etc/redis/redis.conf",
-        "./etc/rc.local:/etc/rc.local",
-        "./etc/localtime:/etc/localtime"
     ]
     command: [
         "redis-server",
@@ -57,12 +53,12 @@ services:
         max-size: '100m'
         max-file: '10'
   redis-m6393:
-    image: redis:5.0.5 # 基础镜像
+    image: redis:7.2 # 基础镜像
     container_name: redis-m6393 # 容器名称
     restart: always
     environment: # 环境变量
       - TZ=Asia/Shanghai
-      - LANG=en_US.UTF-8
+      #- LANG=en_US.UTF-8
     ports: # 映射端口，对外提供服务
       - 6393:6393 # redis的服务端口
       - 16393:16393 # redis集群监控端口
@@ -73,8 +69,6 @@ services:
     volumes: [
         "./redis-m6393/data:/data",
         "./redis-m6393/conf/redis.conf:/etc/redis/redis.conf",
-        "./etc/rc.local:/etc/rc.local",
-        "./etc/localtime:/etc/localtime"
     ]
     command: [
         "redis-server",
@@ -85,12 +79,12 @@ services:
         max-size: '100m'
         max-file: '10'
   redis-s6394:
-    image: redis:5.0.5 # 基础镜像
+    image: redis:7.2 # 基础镜像
     container_name: redis-s6394 # 容器名称
     restart: always
     environment: # 环境变量
       - TZ=Asia/Shanghai
-      - LANG=en_US.UTF-8
+      #- LANG=en_US.UTF-8
     ports: # 映射端口，对外提供服务
       - 6394:6394 # redis的服务端口
       - 16394:16394 # redis集群监控端口
@@ -101,8 +95,6 @@ services:
     volumes: [
         "./redis-s6394/data:/data",
         "./redis-s6394/conf/redis.conf:/etc/redis/redis.conf",
-        "./etc/rc.local:/etc/rc.local",
-        "./etc/localtime:/etc/localtime"
     ]
     command: [
         "redis-server",
@@ -113,12 +105,12 @@ services:
         max-size: '100m'
         max-file: '10'
   redis-s6395:
-    image: redis:5.0.5 # 基础镜像
+    image: redis:7.2 # 基础镜像
     container_name: redis-s6395 # 容器名称
     restart: always
     environment: # 环境变量
       - TZ=Asia/Shanghai
-      - LANG=en_US.UTF-8
+      #- LANG=en_US.UTF-8
     ports: # 映射端口，对外提供服务
       - 6395:6395 # redis的服务端口
       - 16395:16395 # redis集群监控端口
@@ -129,8 +121,6 @@ services:
     volumes: [
         "./redis-s6395/data:/data",
         "./redis-s6395/conf/redis.conf:/etc/redis/redis.conf",
-        "./etc/rc.local:/etc/rc.local",
-        "./etc/localtime:/etc/localtime"
     ]
     command: [
         "redis-server",
@@ -141,12 +131,12 @@ services:
         max-size: '100m'
         max-file: '10'
   redis-s6396:
-    image: redis:5.0.5 # 基础镜像
+    image: redis:7.2 # 基础镜像
     container_name: redis-s6396 # 容器名称
     restart: always
     environment: # 环境变量
       - TZ=Asia/Shanghai
-      - LANG=en_US.UTF-8
+      #- LANG=en_US.UTF-8
     ports: # 映射端口，对外提供服务
       - 6396:6396 # redis的服务端口
       - 16396:16396 # redis集群监控端口
@@ -157,8 +147,6 @@ services:
     volumes: [
         "./redis-s6396/data:/data",
         "./redis-s6396/conf/redis.conf:/etc/redis/redis.conf",
-        "./etc/rc.local:/etc/rc.local",
-        "./etc/localtime:/etc/localtime"
     ]
     command: [
         "redis-server",
