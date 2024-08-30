@@ -13,6 +13,12 @@ services:
     environment:
       - MINIO_ROOT_USER=minio
       - MINIO_ROOT_PASSWORD=asdfghjkl
+    networks:
+      extnetwork:
+        ipv4_address: 172.16.0.249
+
+include:
+  - ../network.yml 
 
 volumes:
   minio_data:

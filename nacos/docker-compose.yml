@@ -13,3 +13,9 @@ services:
     env_file:
       - ./env/nacos-embedded.env
     restart: always
+    networks:
+      extnetwork:
+        ipv4_address: 172.16.0.171
+
+include:
+  - ../network.yml 

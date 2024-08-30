@@ -26,6 +26,9 @@ services:
       options:
         max-size: '100m'
         max-file: '10'
+    networks:
+      extnetwork:
+        ipv4_address: 172.16.0.241
   redis-m6392:
     image: redis:7.2 # 基础镜像
     container_name: redis-m6392 # 容器名称
@@ -52,6 +55,9 @@ services:
       options:
         max-size: '100m'
         max-file: '10'
+    networks:
+      extnetwork:
+        ipv4_address: 172.16.0.242
   redis-m6393:
     image: redis:7.2 # 基础镜像
     container_name: redis-m6393 # 容器名称
@@ -78,6 +84,9 @@ services:
       options:
         max-size: '100m'
         max-file: '10'
+    networks:
+      extnetwork:
+        ipv4_address: 172.16.0.243
   redis-s6394:
     image: redis:7.2 # 基础镜像
     container_name: redis-s6394 # 容器名称
@@ -104,6 +113,9 @@ services:
       options:
         max-size: '100m'
         max-file: '10'
+    networks:
+      extnetwork:
+        ipv4_address: 172.16.0.244
   redis-s6395:
     image: redis:7.2 # 基础镜像
     container_name: redis-s6395 # 容器名称
@@ -130,6 +142,9 @@ services:
       options:
         max-size: '100m'
         max-file: '10'
+    networks:
+      extnetwork:
+        ipv4_address: 172.16.0.245
   redis-s6396:
     image: redis:7.2 # 基础镜像
     container_name: redis-s6396 # 容器名称
@@ -156,3 +171,9 @@ services:
       options:
         max-size: '100m'
         max-file: '10'
+    networks:
+      extnetwork:
+        ipv4_address: 172.16.0.200
+
+include:
+  - ../network.yml 

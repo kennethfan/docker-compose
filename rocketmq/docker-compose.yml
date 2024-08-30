@@ -10,6 +10,9 @@ services:
       - 9876:9876
     restart: always
     command: sh mqnamesrv
+    networks:
+      extnetwork:
+        ipv4_address: 172.16.0.191
   broker:
     image: apache/rocketmq:5.1.4
     container_name: rocketmq-broker
@@ -25,6 +28,9 @@ services:
     command: sh mqbroker -n namesrv:9876
     depends_on:
       - namesrv
+    networks:
+      extnetwork:
+        ipv4_address: 172.16.0.192
   console:
     image: styletang/rocketmq-console-ng:1.0.0
     container_name: rocketmq-console
@@ -34,5 +40,9 @@ services:
       - namesrv
     environment:
       - JAVA_OPTS= -Dlogging.level.root=info -Drocketmq.namesrv.addr=namesrv:9876 -Dcom.rocketmq.sendMessageWithVIPChannel=false
+    networks:
+      extnetwork:
+        ipv4_address: 172.16.0.193
 
-
+include:
+  - ../network.yml 

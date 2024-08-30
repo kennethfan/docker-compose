@@ -13,6 +13,9 @@ services:
       - "TZ=Asia/Shanghai" 
     ports: 
       - 13306:3306 
+    networks:
+      extnetwork:
+        ipv4_address: 172.16.0.247
 
   mysql-slave: 
     restart: always 
@@ -27,3 +30,9 @@ services:
       - "TZ=Asia/Shanghai" 
     ports: 
       - 23306:3306 
+    networks:
+      extnetwork:
+        ipv4_address: 172.16.0.248
+
+include:
+  - ../network.yml 

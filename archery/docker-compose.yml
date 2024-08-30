@@ -31,6 +31,9 @@ services:
       interval: 5s
       timeout: 5s
       retries: 5
+    networks:
+      extnetwork:
+        ipv4_address: 172.16.0.221
 
   goinception:
     image: hanchuanchuan/goinception
@@ -40,6 +43,9 @@ services:
       - "4000:4000"
     volumes:
       - "./inception/config.toml:/etc/config.toml"
+    networks:
+      extnetwork:
+        ipv4_address: 172.16.0.222
 
   archery:
     # 下方的镜像地址仅为示例, 请前往以下地址确认你需要的版本:
@@ -67,3 +73,9 @@ services:
     entrypoint: "bash /opt/archery/src/docker/startup.sh"
     env_file:
       - .env
+    networks:
+      extnetwork:
+        ipv4_address: 172.16.0.223
+
+include:
+  - ../network.yml 
