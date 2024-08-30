@@ -13,6 +13,9 @@ services:
       - IMGPROXY_LOCAL_FILESYSTEM_ROOT=/app/images
     env_file:
       - ./env/s3.env
-volumes:
-  minio_data:
-    driver: local
+    networks:
+      extnetwork:
+        ipv4_address: 172.16.0.250
+
+include:
+  - ../network.yml 

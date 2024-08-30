@@ -21,7 +21,8 @@ services:
       - 9200:9200
       - 9300:9300
     networks:
-      - elastic
+      extnetwork:
+        ipv4_address: 172.16.0.231
   kibana01:
     image: kibana:7.10.1
     container_name: kibana01
@@ -35,8 +36,8 @@ services:
     ports:
       - 5601:5601
     networks:
-      - elastic
+      extnetwork:
+        ipv4_address: 172.16.0.232
 
-networks:
-  elastic:
-    driver: bridge
+include:
+  - ../network.yml 

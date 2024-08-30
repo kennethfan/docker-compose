@@ -9,3 +9,9 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
     ports:
       - 9000:9000
+    networks:
+      extnetwork:
+        ipv4_address: 172.16.0.246
+
+include:
+  - ../network.yml 
